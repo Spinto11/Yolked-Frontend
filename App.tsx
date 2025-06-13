@@ -14,6 +14,14 @@ import EnterPhoneScreen from './screens/auth/4C_EnterPhoneScreen'
 import Onboarding4GScreen from './screens/auth/4G_OnboardingScreen'
 import Onboarding4HScreen from './screens/auth/4H_OnboardingScreen'
 import GenderScreen from './screens/auth/5A_GenderScreen'
+import BirthdateScreen from './screens/auth/5B_BirthdateScreen'
+import HeightWeightScreen from './screens/auth/5C_HeightWeightScreen'
+import LocationScreen from './screens/auth/5D_LocationScreen'
+import ExperienceLevelScreen from './screens/auth/5F_ExperienceLevelScreen'
+import TrainTypeScreen from './screens/auth/5G_TrainTypeScreen'
+import TrainFrequencyScreen from './screens/auth/5H_TrainFrequencyScreen'
+import TrainLengthScreen from './screens/auth/5I_TrainLengthScreen'
+import GoalScreen from './screens/auth/5J_GoalScreen'
 
 // Navigation Types
 import { RootStackParamList } from './types/navigation'
@@ -40,6 +48,14 @@ export default function App() {
         <Stack.Screen name="4G_Onboarding" component={Onboarding4GScreen} />
         <Stack.Screen name="4H_Onboarding" component={Onboarding4HScreen} />
         <Stack.Screen name="5A_Gender" component={GenderScreen} />
+        <Stack.Screen name="5B_Birthdate" component={BirthdateScreen} />
+        <Stack.Screen name="5C_HeightWeight" component={HeightWeightScreen} />
+        <Stack.Screen name="5D_Location" component={LocationScreen} />
+        <Stack.Screen name="5F_ExperienceLevel" component={ExperienceLevelScreen} />
+        <Stack.Screen name="5G_TrainType" component={TrainTypeScreen} />
+        <Stack.Screen name="5H_TrainFrequency" component={TrainFrequencyScreen} />
+        <Stack.Screen name="5I_TrainLength" component={TrainLengthScreen} />
+        <Stack.Screen name="5J_Goal" component={GoalScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )

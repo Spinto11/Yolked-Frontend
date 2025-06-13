@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    fontSize: 28,
+    fontSize: 36,
     textAlign: 'center',
     fontFamily: 'BebasNeue',
     fontWeight: 'bold',

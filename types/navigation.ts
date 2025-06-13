@@ -11,6 +11,14 @@ export type RootStackParamList = {
   '4G_Onboarding': undefined
   '4H_Onboarding': undefined
   '5A_Gender': undefined
+  '5B_Birthdate': undefined
+  '5C_HeightWeight': undefined
+  '5D_Location': undefined
+  '5F_ExperienceLevel': undefined
+  '5G_TrainType': undefined
+  '5H_TrainFrequency': undefined
+  '5I_TrainLength': undefined
+  '5J_Goal': undefined
 }
 
 
