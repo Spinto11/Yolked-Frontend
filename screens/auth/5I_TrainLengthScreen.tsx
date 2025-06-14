@@ -38,7 +38,6 @@ export default function TrainLengthScreen({ navigation }: Props) {
               activeOpacity={0.9}
             >
               <Text style={styles.optionText}>{option}</Text>
-              {selected === option && <View style={styles.checkmark} />}
             </TouchableOpacity>
           ))}
         </View>
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.35)',
+    backgroundColor: 'rgba(50,50,50, 0.55)',
     borderRadius: 12,
     marginBottom: 10,
     marginHorizontal: 5,
@@ -79,9 +78,9 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
   },
   optionSelected: { backgroundColor: '#DBC078', borderColor: '#DBC078' },
-  optionText: { color: '#fff', fontSize: 18, fontFamily: 'BebasNeue', flex: 1 },
+  optionText: { color: '#fff', fontSize: 24, fontFamily: 'BebasNeue', flex: 1, textAlign: 'center', marginTop: 40},
   checkmark: { width: 24, height: 24, borderRadius: 12, backgroundColor: '#fff', borderWidth: 2, borderColor: '#DBC078', marginLeft: 10 },
-  continueButton: { width: '100%', borderRadius: 20, alignItems: 'center', paddingVertical: 14, alignSelf: 'center', marginTop: 10 },
+  continueButton: { width: '90%', borderRadius: 20, alignItems: 'center', paddingVertical: 14, alignSelf: 'center', marginTop: 40 },
   continueButtonEnabled: { backgroundColor: '#DBC078' },
   continueButtonDisabled: { backgroundColor: '#666' },
   continueText: { color: '#222', fontSize: 18, fontWeight: 'bold', fontFamily: 'BebasNeue' },

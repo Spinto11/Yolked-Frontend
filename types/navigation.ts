@@ -19,6 +19,11 @@ export type RootStackParamList = {
   '5H_TrainFrequency': undefined
   '5I_TrainLength': undefined
   '5J_Goal': undefined
+  '5K_GymAccess': undefined
+  '5L_CoachFeature': undefined
+  '5M_SubscriptionTrial': undefined
+  '5M_SubscriptionChoice': undefined
+  'MainHub': undefined
 }
 
 

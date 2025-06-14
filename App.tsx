@@ -22,6 +22,11 @@ import TrainTypeScreen from './screens/auth/5G_TrainTypeScreen'
 import TrainFrequencyScreen from './screens/auth/5H_TrainFrequencyScreen'
 import TrainLengthScreen from './screens/auth/5I_TrainLengthScreen'
 import GoalScreen from './screens/auth/5J_GoalScreen'
+import GymAccessScreen from './screens/auth/5K_GymAccessScreen'
+import CoachFeatureScreen from './screens/auth/5L_CoachFeatureScreen'
+import SubscriptionTrialScreen from './screens/auth/5M_SubscriptionTrialScreen'
+import SubscriptionChoiceScreen from './screens/auth/5M_SubscriptionChoiceScreen'
+import MainHub from './screens/main/MainHub'
 
 // Navigation Types
 import { RootStackParamList } from './types/navigation'
@@ -56,6 +61,11 @@ export default function App() {
         <Stack.Screen name="5H_TrainFrequency" component={TrainFrequencyScreen} />
         <Stack.Screen name="5I_TrainLength" component={TrainLengthScreen} />
         <Stack.Screen name="5J_Goal" component={GoalScreen} />
+        <Stack.Screen name="5K_GymAccess" component={GymAccessScreen} />
+        <Stack.Screen name="5L_CoachFeature" component={CoachFeatureScreen} />
+        <Stack.Screen name="5M_SubscriptionTrial" component={SubscriptionTrialScreen} />
+        <Stack.Screen name="5M_SubscriptionChoice" component={SubscriptionChoiceScreen} />
+        <Stack.Screen name="MainHub" component={MainHub} />
       </Stack.Navigator>
     </NavigationContainer>
   )

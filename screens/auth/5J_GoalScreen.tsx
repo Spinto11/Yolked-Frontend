@@ -18,7 +18,15 @@ const options = [
 ];
 
 export default function GoalScreen({ navigation }: Props) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggleOption = (option: string) => {
+    if (selected.includes(option)) {
+      setSelected(selected.filter(item => item !== option));
+    } else {
+      setSelected([...selected, option]);
+    }
+  };
 
   return (
     <ImageBackground source={require('../../assets/images/whatisyourgoal.png')} style={styles.bg}>
@@ -32,19 +40,19 @@ export default function GoalScreen({ navigation }: Props) {
           {options.map(option => (
             <TouchableOpacity
               key={option}
-              style={[styles.option, selected === option && styles.optionSelected]}
-              onPress={() => setSelected(option)}
+              style={[styles.option, selected.includes(option) && styles.optionSelected]}
+              onPress={() => toggleOption(option)}
               activeOpacity={0.9}
             >
               <Text style={styles.optionText}>{option}</Text>
-              {selected === option && <View style={styles.checkmark} />}
+              {selected.includes(option) && <Text style={styles.checkmark}>✓</Text>}
             </TouchableOpacity>
           ))}
         </View>
         <TouchableOpacity
-          style={[styles.continueButton, selected ? styles.continueButtonEnabled : styles.continueButtonDisabled]}
-          disabled={!selected}
-          onPress={() => navigation.navigate('2A_Intro')}
+          style={[styles.continueButton, selected.length > 0 ? styles.continueButtonEnabled : styles.continueButtonDisabled]}
+          disabled={selected.length === 0}
+          onPress={() => navigation.navigate('5K_GymAccess')}
         >
           <Text style={styles.continueText}>CONTINUE</Text>
         </TouchableOpacity>
@@ -61,11 +69,12 @@ const styles = StyleSheet.create({
   title: { fontSize: 36, color: '#fff', fontFamily: 'BebasNeue', marginVertical: 18, letterSpacing: 0.5, textAlign: 'center' },
   subtitle: { color: '#fff', fontSize: 14, opacity: 0.8, marginBottom: 18, marginLeft: 2, lineHeight: 18, textAlign: 'center' },
   optionsWrap: { marginBottom: 30 },
-  option: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.35)', borderRadius: 12, padding: 16, marginBottom: 14, borderWidth: 2, borderColor: 'transparent' },
-  optionSelected: { backgroundColor: '#DBC078', borderColor: '#DBC078' },
+  option: { width: '90%', alignSelf: 'center', flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(50,50,50, 0.55)', borderRadius: 12, padding: 16, marginBottom: 14, borderWidth: 2, borderColor: 'transparent' },
+
+  optionSelected: { backgroundColor: '#DBC078'},
   optionText: { color: '#fff', fontSize: 18, fontFamily: 'BebasNeue', flex: 1 },
-  checkmark: { width: 24, height: 24, borderRadius: 12, backgroundColor: '#fff', borderWidth: 2, borderColor: '#DBC078', marginLeft: 10 },
-  continueButton: { width: '100%', borderRadius: 20, alignItems: 'center', paddingVertical: 14, alignSelf: 'center', marginTop: 10 },
+  checkmark: { color: '#fff', fontSize: 24, marginLeft: 10 },
+  continueButton: { width: '90%',borderRadius: 20, alignItems: 'center', paddingVertical: 14, alignSelf: 'center'},
   continueButtonEnabled: { backgroundColor: '#DBC078' },
   continueButtonDisabled: { backgroundColor: '#666' },
   continueText: { color: '#222', fontSize: 18, fontWeight: 'bold', fontFamily: 'BebasNeue' },
